@@ -9,7 +9,7 @@ using System.Data.SqlClient;
 
 public partial class Admin_adminLogin : System.Web.UI.Page
 {
-    SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\Coding\WebSite4NOW\App_Data\shop.mdf;Integrated Security=True");
+    SqlConnection connection = new SqlConnection(@"Data Source = (LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\Coding\ASP.Net\Web Development\E-Commerce-Development\E-Commerce Website\App_Data\shop.mdf;Integrated Security = True");
     int i;
 
     protected void Page_Load(object sender, EventArgs e)

@@ -12,7 +12,7 @@
 <script src="js/jquery-func.js" type="text/javascript"></script>
 </head>
 <body>
-    <form id="f1" runat="server"></form>
+    <form id="f1" runat="server">
 <!-- Shell -->
 <div class="shell">
   <!-- Header -->
