@@ -50,6 +50,7 @@ public partial class User_product_desc : System.Web.UI.Page
         DataTable dt = new DataTable();
         SqlDataAdapter dA = new SqlDataAdapter(command);
         dA.Fill(dt);
+        //place holder for the values to store in cookies
         foreach (DataRow dr in dt.Rows)
         {
             product_name = dr["product_name"].ToString();
@@ -62,7 +63,7 @@ public partial class User_product_desc : System.Web.UI.Page
 
         //create a new cookie name AA
         if (Request.Cookies["aa"] == null) //if a cookie is empty
-        {   //store multiple values in the cookies
+        {   //store multiple values in the cookies. Separate each value with a ,
             Response.Cookies["aa"].Value = product_name.ToString() + "," + product_desc.ToString() + "," + product_price.ToString() + "," + product_qty.ToString() + "," + product_images.ToString();
             Response.Cookies["aa"].Expires = DateTime.Now.AddDays(1); //expire after one day
         }
@@ -71,6 +72,6 @@ public partial class User_product_desc : System.Web.UI.Page
             Response.Cookies["aa"].Value = Request.Cookies["aa"].Value + '|' + product_name.ToString() + "," + product_desc.ToString() + "," + product_price.ToString() + "," + product_qty.ToString() + "," + product_images.ToString();
             Response.Cookies["aa"].Expires = DateTime.Now.AddDays(1);
         }
-
+       
     }
 }
