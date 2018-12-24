@@ -26,6 +26,19 @@
         </FooterTemplate>
     </asp:Repeater>
     <br /> 
-    <asp:Button ID="b1" runat="server" Text="Add to Cart" OnClick="b1_Click" />
+
+    <table>
+        <tr>
+         <td>
+             <asp:Label ID="l2" runat="server" Text="Enter Quantity"></asp:Label></td>
+        <td> <asp:TextBox ID="t1" runat="server"></asp:TextBox></td>
+        <td> <asp:Button ID="b1" runat="server" Text="Add to Cart" OnClick="b1_Click" /></td>
+   </tr>
+        <tr>
+            <td colspan="3">
+                <asp:Label ID="l1" runat="server" Text="" ></asp:Label></td>
+        </tr>
+         </table>
+   
 </asp:Content>
 

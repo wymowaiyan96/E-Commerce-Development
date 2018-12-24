@@ -30,6 +30,12 @@ public partial class Admin_add_product : System.Web.UI.Page
         command.CommandText = "INSERT INTO product VALUES ('"+t1.Text+"','"+t2.Text+"',"+t3.Text+","+t4.Text+",'"+b.ToString()+"')";
         command.ExecuteNonQuery();
         connection.Close();
+
+        t1.Text = "";
+        t2.Text = "";
+        t3.Text = "";
+        t4.Text = "";
+       
     }
 }
 
