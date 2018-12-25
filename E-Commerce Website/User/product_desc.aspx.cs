@@ -89,12 +89,12 @@ public partial class User_product_desc : System.Web.UI.Page
             //create a new cookie name AA
             if (Request.Cookies["aa"] == null) //if a cookie is empty
             {   //store multiple values in the cookies. Separate each value with a ,
-                Response.Cookies["aa"].Value = product_name.ToString() + "," + product_desc.ToString() + "," + product_price.ToString() + "," + product_qty.ToString() + "," + product_images.ToString();
+                Response.Cookies["aa"].Value = product_name.ToString() + "," + product_desc.ToString() + "," + product_price.ToString() + "," + t1.Text + "," + product_images.ToString() + "," + id.ToString();
                 Response.Cookies["aa"].Expires = DateTime.Now.AddDays(1); //expire after one day
             }
             else
             {//if there is cookie previously, add new cookie into it <special symbol |> to split --> old cookie | new cookie
-                Response.Cookies["aa"].Value = Request.Cookies["aa"].Value + '|' + product_name.ToString() + "," + product_desc.ToString() + "," + product_price.ToString() + "," + product_qty.ToString() + "," + product_images.ToString();
+                Response.Cookies["aa"].Value = Request.Cookies["aa"].Value + '|' + product_name.ToString() + "," + product_desc.ToString() + "," + product_price.ToString() + "," + t1.Text + "," + product_images.ToString() + "," + id.ToString();
                 Response.Cookies["aa"].Expires = DateTime.Now.AddDays(1);
             }
 

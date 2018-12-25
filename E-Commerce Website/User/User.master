@@ -21,7 +21,7 @@
     <!-- Cart -->
     <div id="cart"> <a href="view_cart.aspx" class="cart-link">Your Shopping Cart</a>
       <div class="cl">&nbsp;</div>
-      <span>Articles: <strong>4</strong></span> &nbsp;&nbsp; <span>Cost: <strong>$250.99</strong></span> </div>
+      <span>Total Items: <asp:Label ID="totItem" runat="server" Text="0"></asp:Label> </span> &nbsp;&nbsp; <span>Cost:  $<asp:Label ID="totPrice" runat="server" Text="0"></asp:Label></span> </div>
     <!-- End Cart -->
     <!-- Navigation -->
     <div id="navigation">
