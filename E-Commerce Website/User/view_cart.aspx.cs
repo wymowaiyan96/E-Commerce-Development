@@ -50,6 +50,7 @@ public partial class User_view_cart : System.Web.UI.Page
 
     protected void b1_Click(object sender, EventArgs e)
     {
+        Session["checkoutbutton"] = "yes"; //yes value will be passed when button is clicked
         Response.Redirect("checkout.aspx");
     }
 }

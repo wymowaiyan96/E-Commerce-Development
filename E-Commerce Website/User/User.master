@@ -30,7 +30,18 @@
         <li><a href="#">Support</a></li>
         <li><a href="#">My Account</a></li>
         <li><a href="display_item.aspx">The Store</a></li>
-        <li><a href="#">Contact</a></li>
+      
+          <%
+              if(Session["User"] == null)
+               {
+                 %><li><a href="registration.aspx">Register</a></li><%
+                 %><li><a href="webform.aspx">Login</a></li> <%
+              }
+
+            //if login already, show the logout page
+            else{%><li><a href="logout.aspx">Logout</a></li> <%}
+               %>
+ 
       </ul>
     </div>
     <!-- End Navigation -->
@@ -45,10 +56,10 @@
       <div id="slider" class="box">
         <div id="slider-holder">
           <ul>
-            <li><a href="#"><img src="css/images/slide1.jpg" alt="" /></a></li>
-            <li><a href="#"><img src="css/images/slide1.jpg" alt="" /></a></li>
-            <li><a href="#"><img src="css/images/slide1.jpg" alt="" /></a></li>
-            <li><a href="#"><img src="css/images/slide1.jpg" alt="" /></a></li>
+            <li><a href="#"><img src="css/images/z0.jpg" alt="" /></a></li>
+            <li><a href="#"><img src="css/images/z1.jpg" alt="" /></a></li>
+            <li><a href="#"><img src="css/images/z2.jpg" alt="" /></a></li>
+            <li><a href="#"><img src="css/images/z3.png" alt="" /></a></li>
           </ul>
         </div>
         <div id="slider-nav"> <a href="#" class="active">1</a> <a href="#">2</a> <a href="#">3</a> <a href="#">4</a> </div>

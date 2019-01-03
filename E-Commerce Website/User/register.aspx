@@ -44,8 +44,9 @@
             </td>
             <td colspan ="2" align="center">
                 <asp:Label ID="l1" runat="server" ></asp:Label>
-            </td>
+            </td>           
         </tr>
+
     </table>
 </asp:Content>
 

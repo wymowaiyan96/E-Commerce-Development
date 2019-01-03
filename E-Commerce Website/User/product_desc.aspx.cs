@@ -17,7 +17,7 @@ public partial class User_product_desc : System.Web.UI.Page
 
         if (Request.QueryString["id"] == null)
         {//if no pic is selected
-            Response.Redirect("display_item.asp");//redirect to item page for user to select
+            Response.Redirect("display_item.aspx");//redirect to item page for user to select
         }
         else
         {//display descriptions.
