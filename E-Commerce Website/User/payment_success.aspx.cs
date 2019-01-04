@@ -38,11 +38,13 @@ public partial class User_payment_success : System.Web.UI.Page
             }
 
             //get the "ID" of the order from the orders table
-            SqlCommand cmd2 = new SqlCommand("SELECT top 1 * from order WHERE email = '" + Session["user"].ToString() + "'ORDER BY id DESC ", connection);
-            cmd.ExecuteNonQuery(); //top1 means only one record
+            SqlCommand cmd2 = connection.CreateCommand();
+            cmd2.CommandType = CommandType.Text;
+            cmd2.CommandText = "select top 1 * from orders where email='" + Session["user"].ToString() + "' order by id desc";
+            cmd2.ExecuteNonQuery(); //top1 means only one record
             DataTable dt2 = new DataTable();
-            SqlDataAdapter dA2 = new SqlDataAdapter(cmd);
-            dA.Fill(dt2);
+            SqlDataAdapter dA2 = new SqlDataAdapter(cmd2);
+            dA2.Fill(dt2);
             foreach (DataRow dr2 in dt2.Rows)
             {
                 order_id = dr2["id"].ToString();
@@ -64,11 +66,11 @@ public partial class User_payment_success : System.Web.UI.Page
                     {
                         a[j] = strArr1[j].ToString();
                     }
-                    SqlCommand cmd3 = new SqlCommand("INSERT INTO order_details VALUES('" + order_id.ToString() + "','" + a[0].ToString() + "','" + a[1].ToString() + "','" + a[2].ToString() + "','" + a[3].ToString() + "','" + a[4].ToString() + "')", connection);
+                    SqlCommand cmd3 = new SqlCommand("INSERT INTO order_details VALUES('" + order_id.ToString() + "','" + a[0].ToString() + "','" + a[2].ToString() + "','" + a[3].ToString() + "','" + a[4].ToString() + "')", connection);
                     cmd3.ExecuteNonQuery();
                 }
             }
-
+                
         }
 
         else

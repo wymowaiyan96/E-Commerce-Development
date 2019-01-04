@@ -62,7 +62,7 @@
 
 
                     <li>
-                        <a href="#"><i class="fa fa-qrcode "></i>My Link One</a>
+                        <a href="../../User/display_item.aspx"><i class="fa fa-qrcode "></i>User</a>
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-bar-chart-o"></i>My Link Two</a>
