@@ -33,7 +33,8 @@ public partial class Admin_adminLogin : System.Web.UI.Page
 
         if (i==1)
         {
-            Response.Redirect("Default.aspx");
+            Session["admin"] = t1.Text;
+            Response.Redirect("add_product.aspx");
         }
         else
         {

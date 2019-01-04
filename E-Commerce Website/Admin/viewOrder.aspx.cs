@@ -15,6 +15,12 @@ public partial class Admin_viewOrder : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
+
+        if (Session["admin"] == null)
+        {
+            Response.Redirect("adminLogin.aspx");
+        }
+
         //id passed from the displayOrder page
         id = Convert.ToInt32(Request.QueryString["id"].ToString());
 

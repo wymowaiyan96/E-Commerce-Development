@@ -39,7 +39,11 @@
               }
 
             //if login already, show the logout page
-            else{%><li><a href="logout.aspx">Logout</a></li> <%}
+            else{                                                                     
+                %><li><a href="logout.aspx">Logout</a></li> <%
+                %><li><a href="displayOrder.aspx">My Orders</a></li> <%
+
+                 }
                %>
  
       </ul>

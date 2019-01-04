@@ -15,7 +15,10 @@ public partial class Admin_add_product : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-
+       if ( Session["admin"] == null)
+        {
+            Response.Redirect("adminLogin.aspx");
+        }
     }
 
     protected void b1_Click(object sender, EventArgs e)

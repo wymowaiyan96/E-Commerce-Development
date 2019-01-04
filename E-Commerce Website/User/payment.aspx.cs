@@ -17,6 +17,12 @@ public partial class User_payment : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
+
+        if (Session["user"] == null)
+        {//redirect to the login page
+            Response.Redirect("webform.aspx");
+        }
+
         if (Request.Cookies["aa"] != null)
         {
             s = Convert.ToString(Request.Cookies["aa"].Value); //store cookie values in s

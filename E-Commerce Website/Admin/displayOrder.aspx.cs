@@ -13,6 +13,12 @@ public partial class Admin_displayOrder : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
+
+        if (Session["admin"] == null)
+        {
+            Response.Redirect("adminLogin.aspx");
+        }
+
         connection.Open();
         SqlCommand command = new SqlCommand("SELECT * FROM orders ORDER BY id DESC",connection); 
         command.ExecuteNonQuery();

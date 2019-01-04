@@ -15,6 +15,12 @@ public partial class User_update_order_details : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
 
+
+        if (Session["user"] == null)
+        {//redirect to the login page
+            Response.Redirect("webform.aspx");
+        }
+
         if (IsPostBack)
         {
             return;

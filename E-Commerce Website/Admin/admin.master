@@ -49,34 +49,23 @@
 
 
                     <li class="active-link">
-                        <a href="index.html" ><i class="fa fa-desktop "></i>Dashboard <span class="badge">Included</span></a>
+                        <a href="index.html" ><i class="fa fa-desktop "></i>Dashboard</a>
                     </li>
                    
 
                     <li>
-                        <a href="ui.html"><i class="fa fa-table "></i>UI Elements  <span class="badge">Included</span></a>
-                    </li>
-                    <li>
-                        <a href="blank.html"><i class="fa fa-edit "></i>Blank Page  <span class="badge">Included</span></a>
-                    </li>
+                        <a href="displayOrder.aspx"><i class="fa fa-table "></i>Orders</a>
+                    </li>             
 
 
                     <li>
                         <a href="../../User/display_item.aspx"><i class="fa fa-qrcode "></i>User</a>
                     </li>
-                    <li>
-                        <a href="#"><i class="fa fa-bar-chart-o"></i>My Link Two</a>
+                
+                     <li>
+                        <a href="logout.aspx"><i class="fa fa-edit "></i>Log Out</a>
                     </li>
 
-                    <li>
-                        <a href="#"><i class="fa fa-edit "></i>My Link Three </a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-table "></i>My Link Four</a>
-                    </li>
-                     <li>
-                        <a href="#"><i class="fa fa-edit "></i>My Link Five </a>
-                    </li>
                     
                 </ul>
                             </div>
