@@ -49,9 +49,12 @@
 
 
                     <li class="active-link">
-                        <a href="index.html" ><i class="fa fa-desktop "></i>Dashboard</a>
+                        <a href="add_product.aspx" ><i class="fa fa-desktop "></i>Add Products</a>
                     </li>
                    
+                       <li>
+                        <a href="addCategory.aspx" ><i class="fa fa-desktop "></i>Add Category</a>
+                    </li>
 
                     <li>
                         <a href="displayOrder.aspx"><i class="fa fa-table "></i>Orders</a>

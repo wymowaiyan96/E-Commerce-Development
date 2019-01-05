@@ -99,11 +99,15 @@
       <div class="box categories">
         <h2>Categories <span></span></h2>
         <div class="box-content">
-          <ul>
-            <li><a href="#">Category 1</a></li>
-            <li><a href="#">Category 2</a></li>
-            <li class="last"><a href="#">Category 3</a></li>
-
+          <ul>          
+              <asp:DataList ID="dd" runat="server">
+                  <ItemTemplate>
+                       <!--pass the product_category to display_item page-->
+                        <li><a href="display_item.aspx?category=<%#Eval("product_category") %>">
+                        <!--to display the categories-->
+                            <%#Eval("product_category")%></a></li>      
+                  </ItemTemplate>
+              </asp:DataList>
           </ul>
         </div>
       </div>

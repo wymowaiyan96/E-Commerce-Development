@@ -16,9 +16,17 @@ public partial class User_display_item : System.Web.UI.Page
         con.Open();
         SqlCommand command = con.CreateCommand();
         command.CommandType = CommandType.Text;
-        command.CommandText = "SELECT * from product";
-        command.ExecuteNonQuery();
 
+        if (Request.QueryString["category"]==null)
+        { //no category is selected
+            command.CommandText = ("SELECT * from product");
+        }
+        else
+        { //category is selected
+            command.CommandText = "SELECT * from product WHERE product_category='" + Request.QueryString["category"].ToString()+ "'";
+        }
+      
+        command.ExecuteNonQuery();
         DataTable dt = new DataTable();
         SqlDataAdapter dA = new SqlDataAdapter(command);
         dA.Fill(dt);
