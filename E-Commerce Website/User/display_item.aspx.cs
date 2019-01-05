@@ -17,15 +17,21 @@ public partial class User_display_item : System.Web.UI.Page
         SqlCommand command = con.CreateCommand();
         command.CommandType = CommandType.Text;
 
-        if (Request.QueryString["category"]==null)
+        if (Request.QueryString["category"] == null)
         { //no category is selected
             command.CommandText = ("SELECT * from product");
         }
         else
         { //category is selected
-            command.CommandText = "SELECT * from product WHERE product_category='" + Request.QueryString["category"].ToString()+ "'";
+            command.CommandText = "SELECT * from product WHERE product_category='" + Request.QueryString["category"].ToString() + "'";
         }
-      
+
+        //category is not clicked, but searched from textbox
+        if (Request.QueryString["category"] == null && Request.QueryString["search"]!=null)
+        { //%search word% <check SQL>
+            command.CommandText = "SELECT * from product WHERE product_name LIKE('%" +Request.QueryString["search"].ToString() + "%')";
+        }
+
         command.ExecuteNonQuery();
         DataTable dt = new DataTable();
         SqlDataAdapter dA = new SqlDataAdapter(command);

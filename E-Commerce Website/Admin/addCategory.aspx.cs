@@ -13,10 +13,10 @@ public partial class Admin_addCategory : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        //    if (Session["admin"] == null)
-        //    {
-        //        Response.Redirect("adminLogin.aspx");
-        //    }
+        if (Session["admin"] == null)
+        {
+            Response.Redirect("adminLogin.aspx");
+        }
 
         connection.Open();
         SqlCommand command = new SqlCommand("SELECT * from category", connection);

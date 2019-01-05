@@ -87,9 +87,9 @@
          
             <br>
             <label>Product Name</label>
-            <input type="text" class="field" />
+            <input type="text" class="field" id="searchtextbox" tabindex="1"/>
 
-            <input type="submit" class="search-submit" value="Search" />
+            <input type="button" class="search-submit" value="Search" onclick="search();" tabindex="2"/>
             <p> please enter item name inside the textbox</p>
         
         </div>
@@ -186,6 +186,13 @@
 </div>
 <!-- End Shell -->
     </form>
+
+    <script type="text/javascript">
+        function search()
+        {
+            window.location = "display_item.aspx?search=" + document.getElementById("searchtextbox").value;
+        }
+    </script>
 </body>
 </html>
 
