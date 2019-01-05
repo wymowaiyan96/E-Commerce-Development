@@ -13,17 +13,31 @@ public partial class Admin_addCategory : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (Session["admin"] == null)
-        {
-            Response.Redirect("adminLogin.aspx");
-        }
+        //    if (Session["admin"] == null)
+        //    {
+        //        Response.Redirect("adminLogin.aspx");
+        //    }
 
+        connection.Open();
+        SqlCommand command = new SqlCommand("SELECT * from category", connection);
+        command.ExecuteNonQuery();
+        DataTable dt = new DataTable();
+        SqlDataAdapter dA = new SqlDataAdapter(command);
+        dA.Fill(dt);
+        d1.DataSource = dt;
+        d1.DataBind();
+        connection.Close();
+
+    }
+
+    protected void b1_Click(object sender, EventArgs e)
+    {
         //add into database
         connection.Open();
-        SqlCommand command = new SqlCommand("INSERT INTO category VALUES @category", connection);
-        command.Parameters.Add(@"category", t1.Text);
-        l1.Text = t1.Text + " has been added";
+        SqlCommand command = new SqlCommand("INSERT INTO category VALUES ('"+t1.Text+"')", connection);
+        Response.Write("<script>alert('New Category Added!');</script>");
         command.ExecuteNonQuery();
         connection.Close();
+        t1.Text = "";
     }
 }

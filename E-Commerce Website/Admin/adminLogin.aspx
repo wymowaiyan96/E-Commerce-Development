@@ -25,7 +25,7 @@
   <label>Username <span>*</span></label>
   <asp:TextBox ID="t1" runat="server"></asp:TextBox> 
   <label>Password <span>*</span></label>
-   <asp:TextBox ID="t2" runat="server"></asp:TextBox>
+   <asp:TextBox ID="t2" runat="server" TextMode="Password"></asp:TextBox>
     <br /><br />
 
 <asp:Button ID="b1" runat="server" Text="Login" OnClick="b1_Click" />

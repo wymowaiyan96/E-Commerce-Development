@@ -19,6 +19,21 @@ public partial class Admin_add_product : System.Web.UI.Page
         {
             Response.Redirect("adminLogin.aspx");
         }
+
+        if (IsPostBack) return;
+
+        dd.Items.Clear(); //ckear drop down
+        connection.Open();
+        SqlCommand command =new SqlCommand("Select * from category", connection);
+        command.ExecuteNonQuery();
+        DataTable dt = new DataTable();
+        SqlDataAdapter dA = new SqlDataAdapter(command);
+        dA.Fill(dt);
+        foreach (DataRow dr in dt.Rows)
+        { //display category in dropdown 
+            dd.Items.Add(dr["product_category"].ToString());
+        }
+        connection.Close();
     }
 
     protected void b1_Click(object sender, EventArgs e)
@@ -30,10 +45,12 @@ public partial class Admin_add_product : System.Web.UI.Page
         connection.Open();
         SqlCommand command = connection.CreateCommand();
         command.CommandType = CommandType.Text;
-        command.CommandText = "INSERT INTO product VALUES ('"+t1.Text+"','"+t2.Text+"',"+t3.Text+","+t4.Text+",'"+b.ToString()+"')";
+        command.CommandText = "INSERT INTO product VALUES ('"+t1.Text+"','"+t2.Text+"',"+t3.Text+","+t4.Text+",'"+b.ToString()+ "','" + dd.SelectedItem.ToString()+"')";
         command.ExecuteNonQuery();
         connection.Close();
 
+        l1.Text = t1.Text + " has been added!";
+        
         t1.Text = "";
         t2.Text = "";
         t3.Text = "";

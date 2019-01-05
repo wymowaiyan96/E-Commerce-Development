@@ -29,6 +29,11 @@
             <td><asp:FileUpload ID="f1" runat="server" /></td>
         </tr>
 
+        <tr>
+            <td>Select Category</td>
+            <td><asp:DropDownList ID="dd" runat="server"></asp:DropDownList></td>
+        </tr>
+
              <tr>
             <td colspan="2" align="center>">
                 <asp:Button ID="b1" runat="server" Text="Upload" OnClick="b1_Click" />
@@ -36,5 +41,7 @@
             
         </tr>_
     </table>
+    <asp:Label ID="l1" runat="server" Text=""></asp:Label>
+
 </asp:Content>
 
