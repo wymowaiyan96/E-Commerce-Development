@@ -6,7 +6,7 @@
               <ul>
         </HeaderTemplate>
         <ItemTemplate> <%--/*id is passed here */--%>
-             <li class="last"> <a href="product_desc.aspx?id=<%#Eval("id") %>"><img src="../<%#Eval("product_images") %>" alt="" /></a>
+             <li class="last"> <a href="product_desc.aspx?id=<%#Eval("id") %>"><img src="../<%#Eval("product_images") %>" style="text-align:center; margin-left:30px; margin-top:30px" alt="" /></a>
             <div class="product-info">
               <h3><%#Eval("product_name") %></h3>
               <div class="product-desc">

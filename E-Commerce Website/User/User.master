@@ -34,7 +34,7 @@
           <%
               if(Session["User"] == null)
                {
-                 %><li><a href="registration.aspx">Register</a></li><%
+                 %><li><a href="register.aspx">Register</a></li><%
                  %><li><a href="webform.aspx">Login</a></li> <%
               }
 

@@ -13,10 +13,10 @@
                <img src="../<%#Eval("product_images") %>" height="300" width="200" />    </div>
 
              <div style="height:300px; width:395px; float:left; border-style:solid;border-width:1px;">
-                 item name = <%#Eval("product_name") %> <br />
-                 product_desc = <%#Eval("product_desc") %> <br />
-                 product_qty = <%#Eval("product_qty") %> <br />
-                 product_price = <%#Eval("product_price") %>
+                 Name = <%#Eval("product_name") %> <br />
+                 Description = <%#Eval("product_desc") %> <br />
+                 Quantity = <%#Eval("product_qty") %> <br />
+                 Price = $<%#Eval("product_price") %>
              </div>
          </div>
                   
